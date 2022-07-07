@@ -3,7 +3,7 @@ genome: #list of what geno matrices to include in the analysis
   pan: data/pan_mat.Rtab #Rtab file containing pan genome binary calls generated from panaroo, presence/abscence
   struct: data/pan_struct_mat.Rtab #Rtab file containing pan genome binary calls generated from panaroo, structural variants
 # gene_key: data/core_gene_key.tsv #file containing column of full snp/indel variant ids and the corresponding gene id for hogwash grouped analysis
-tree: ../2022_03_07_Kleb_Variant_analysis/2022_03_07_20_38_36_core_results/gubbins/iqtree_masked_wga/2022_03_07_20_38_36_KPNIH1_genome_aln_w_alt_allele_unmapped.treefile #treefile
+tree: ../2022_03_07_MRSA_Variant_analysis/2022_03_08_08_01_53_core_results/gubbins/iqtree_masked_wga/2022_03_08_08_01_53_MRSA_USA_300_genome_aln_w_alt_allele_unmapped.treefile #treefile
 # ml_methods: #list of what machine learning methods to include from mikropml
 #  - glmnet
 #  - rf
