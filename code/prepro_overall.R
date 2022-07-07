@@ -56,7 +56,7 @@ if(!all(sapply(paths, dir.exists))){
 
 #UNADJUSTED FILE ----
 unadjusted_out <- pheno %>%
-  filter(grepl("Kleb", Organism_ID)) %>%
+  filter(grepl("MRSA", Organism_ID)) %>%
   select(genome_id,
          all_of(phenotype_cols))
 
