@@ -66,8 +66,6 @@ rule generate_mikropml_df:
         pheno = "data/pheno/{phenotype}/{group}.tsv"
     output:
         file_name = "data/mikropml/{phenotype}/{group}.{genome}.csv"
-    wildcard_constraints:
-        group = "full" #I want the same full matrix going through preprocessing, only subset to specific strains from prepro_overall after this is complete
     params:
         path = get_geno_path
     log:
