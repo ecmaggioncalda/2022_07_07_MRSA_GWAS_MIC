@@ -1,0 +1,4 @@
+Building DAG of jobs...
+MissingInputException in line 53 of /nfs/turbo/umms-esnitkin/Project_CHG_resistance/Analysis/2022_07_07_MRSA_GWAS_MIC/Snakefile:
+Missing input files for rule prepro_overall:
+data/sample_metadata.csv

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --job-name=severity_GWAS
+#SBATCH --job-name=MRSA_GWAS_MIC
 
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1

@@ -1,6 +1,6 @@
 {
  "__default__": {
-  "account_slurm": "esnitkin1",
+  "account_slurm": "esnitkin0",
   "partition": "standard",
   "jobname": "{rule}.{wildcards}",
   "nodes": 1,
