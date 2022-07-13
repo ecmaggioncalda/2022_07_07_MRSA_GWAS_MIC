@@ -47,8 +47,12 @@ rownames(geno) <- make.names(rownames(geno), unique = TRUE)
 
 # REMOVE VARS
 to_remove <- index_of_non_var_sites(geno)
-geno_subset <- geno[-to_remove,]
-geno_merge <- t(geno_subset)
+if(length(to_remove) >= 1){
+  geno_subset <- geno[-to_remove,]
+  geno_merge <- t(geno_subset)
+}else{
+  geno_merge <- t(geno)
+}
 
 # geno_distinct <- distinct(geno_subset)
 # temp_geno <- as.data.frame(geno_distinct)
