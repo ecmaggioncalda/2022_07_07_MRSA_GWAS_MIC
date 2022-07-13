@@ -46,7 +46,12 @@ test*
 #ignore large folders
 data/**
 results/**
-log/**
+log/*
+!/log/README
+!/log/hpc/README
+!/log/hpc/jobs/README
+!/log/runs/README
+log/runs/*
 aggregated/**
 benchmarks/**
 figures/**
