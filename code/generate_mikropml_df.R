@@ -38,8 +38,20 @@ print("Geno matrix has completed read in")
 
 colnames(geno) <- gsub("$", "_", colnames(geno))
 
-if(!all(colnames(geno) %in% rownames(pheno_merge))){
-  stop("Mistmatch in geno/pheno contents")
+if(any(length(intersect(colnames(geno), rownames(pheno_merge))) != ncol(geno) | length(intersect(colnames(geno), rownames(pheno_merge))) != nrow(pheno_merge))){
+  print("Mistmatch in geno/pheno contents: subsetting contents")
+  geno_diff <- setdiff(colnames(geno), rownames(pheno_merge))
+  pheno_diff <- setdiff(rownames(pheno_merge), colnames(geno))
+  non_overlap <- c(geno_diff, pheno_diff)
+  geno <- geno[, !colnames(geno) %in% geno_diff, drop = FALSE]
+  pheno_merge <- pheno_merge[!rownames(pheno_merge) %in% pheno_diff, , drop = FALSE]
+  print("The following strains were removed as non-overlapping contents")
+  print(paste0(non_overlap))
+  print("overwriting previous phenotype file")
+  pheno_overwrite <- pheno_merge %>%
+    rownames_to_column(var = "genome_id")
+  write_tsv(pheno_overwrite,
+            file = snakemake@input[["pheno"]])
 }
 
 # geno <- geno[,colnames(geno) %in% rownames(pheno_merge)]
